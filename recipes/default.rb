@@ -26,7 +26,9 @@ end
 perlbrew_root = node['perlbrew']['perlbrew_root']
 perlbrew_bin = "#{perlbrew_root}/bin/perlbrew"
 
-directory perlbrew_root
+directory perlbrew_root do
+  recursive true
+end
 
 # if we have perlbrew, upgrade it
 bash "perlbrew self-upgrade" do
